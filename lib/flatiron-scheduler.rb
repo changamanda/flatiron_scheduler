@@ -49,12 +49,12 @@ class FlatironScheduler
     checkout_future
     pull
     add_commit
-    # push
+    push
     checkout_master
     pull
     checkout_today
     change_symlink
     add_commit
-    # push
+    push
   end
 end
