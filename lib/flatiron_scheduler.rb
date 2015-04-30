@@ -1,8 +1,11 @@
+require 'path_setup'
+
 class FlatironScheduler
+  include PathSetup
   attr_accessor :week, :day
 
   def initialize(week, day)
-    @path = '/Users/amandachang/Development/staff-ruby007/curriculum/web-0415'
+    @path = read_path
     @week = week
     @day = day
   end

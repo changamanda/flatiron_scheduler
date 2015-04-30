@@ -1,11 +1,16 @@
 #!/usr/bin/env ruby
 
 require 'flatiron_scheduler'
-require 'string_replacer'
+require 'path_setup'
+
+include PathSetup
 
 if ARGV[0] == 'setup'
-  path = (__FILE__).gsub('bin/flatiron_scheduler', "") + 'lib/flatiron_scheduler.rb'
-  StringReplacer.replace_file_line(5, path, "    @path = '#{ARGV[1]}'\n")
+  setup_path(ARGV[1])
 else
+  if !File.exist?("/Users/#{ENV['USER']}/.fis_scheduler")
+    puts "What is the path of your repo?"
+    setup_path($stdin.gets.chomp)
+  end
   FlatironScheduler.new(ARGV[0], ARGV[1]).run
 end
