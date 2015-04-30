@@ -1,0 +1,11 @@
+#!/usr/bin/env ruby
+
+require 'flatiron_scheduler'
+require 'string_replacer'
+
+if ARGV[0] == 'setup'
+  path = (__FILE__).gsub('bin/flatiron_scheduler', "") + 'lib/flatiron_scheduler.rb'
+  StringReplacer.replace_file_line(5, path, "    @path = '#{ARGV[1]}'\n")
+else
+  FlatironScheduler.new(ARGV[0], ARGV[1]).run
+end

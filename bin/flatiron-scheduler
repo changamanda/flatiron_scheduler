@@ -1,4 +1,0 @@
-#!/usr/bin/env ruby
-
-require 'flatiron-scheduler'
-FlatironScheduler.new(ARGV[0], ARGV[1]).run

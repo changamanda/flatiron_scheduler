@@ -44,17 +44,25 @@ class FlatironScheduler
     system("ln -sfn #{file_name} README.md")
   end
 
-  def run
-    move_to_dir
+  def future_branch_updates
     checkout_future
     pull
     add_commit
     push
+  end
+
+  def master_branch_updates
     checkout_master
     pull
     checkout_today
     change_symlink
     add_commit
     push
+  end
+
+  def run
+    move_to_dir
+    future_branch_updates
+    master_branch_updates
   end
 end

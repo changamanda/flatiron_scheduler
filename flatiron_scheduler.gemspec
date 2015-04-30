@@ -1,14 +1,14 @@
 Gem::Specification.new do |s|
-  s.name        = 'flatiron-scheduler'
+  s.name        = 'flatiron_scheduler'
   s.version     = '0.0.2'
   s.date        = '2015-04-29'
   s.summary     = "Flatiron Scheduler!"
   s.description = "A simple FIS Scheduling Gem"
   s.authors     = ["Amanda Chang"]
   s.email       = 'chang@flatironschool.com'
-  s.executables <<  'flatiron-scheduler'
-  s.files       = ["lib/flatiron-scheduler.rb"]
+  s.executables <<  'flatiron_scheduler'
+  s.files       = ["lib/flatiron_scheduler.rb", "lib/string_replacer.rb"]
   s.homepage    =
-    'http://rubygems.org/gems/flatiron-scheduler'
+    'http://rubygems.org/gems/flatiron_scheduler'
   s.license       = 'MIT'
 end
