@@ -1,5 +1,4 @@
 #Flatiron Scheduler
-###A Simple FIS Scheduling Gem
 
 ##Deploying the Day's Schedule
 
