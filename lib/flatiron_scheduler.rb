@@ -2,7 +2,7 @@ require 'path_setup'
 
 class FlatironScheduler
   include PathSetup
-  attr_accessor :week, :day
+  attr_reader :week, :day, :path
 
   def initialize(week, day)
     @path = read_path
