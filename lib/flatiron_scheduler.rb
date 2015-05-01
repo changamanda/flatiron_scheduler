@@ -71,6 +71,7 @@ class FlatironScheduler
       system("rm -rf blogs")
       system("rm -rf presentations")
       system("rm -rf videos")
+      system("rm -rf interviews")
     elsif branch == 'master'
       dir = Dir.new(Dir.pwd)
       dir.each { |file_name| system("rm -rf #{file_name}") if file_name.start_with?("week") }   
