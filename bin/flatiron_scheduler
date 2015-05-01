@@ -5,14 +5,27 @@ require 'path_setup'
 
 include PathSetup
 
+def documentation
+  message = '''
+ERROR executing gem. Valid commands:
+
+  flatiron_scheduler WEEK DAY
+  flatiron_scheduler new SCHEDULE_NAME CLONE_URL
+  flatiron_scheduler setup SETUP_PATH
+  '''
+  puts message
+end
+
 if ARGV[0] == 'setup'
   setup_path(ARGV[1])
 elsif ARGV[0] == 'new'
   FlatironScheduler.create_schedule(ARGV[1], ARGV[2])
-elsif ARGV[0]
+elsif ARGV[0].to_i != 0 && ARGV[1].to_i != 0
   if !File.exist?("/Users/#{ENV['USER']}/.fis_scheduler")
     puts "What is the path of your repo?"
     setup_path($stdin.gets.chomp)
   end
   FlatironScheduler.new(ARGV[0], ARGV[1]).run
+else
+  documentation
 end
