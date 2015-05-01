@@ -29,7 +29,7 @@ describe 'FlatironScheduler' do
 
     it 'navigates to the correct directory' do
       s = FlatironScheduler.new(5, 4)
-      s.move_to_dir
+      FlatironScheduler.move_to_dir(s.path)
       expect(Dir.pwd).to eq(s.path)
     end
 
