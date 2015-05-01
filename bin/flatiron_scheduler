@@ -7,6 +7,8 @@ include PathSetup
 
 if ARGV[0] == 'setup'
   setup_path(ARGV[1])
+elsif ARGV[0] == 'new'
+  FlatironScheduler.create_schedule(ARGV[1], ARGV[2])
 else
   if !File.exist?("/Users/#{ENV['USER']}/.fis_scheduler")
     puts "What is the path of your repo?"
