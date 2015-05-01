@@ -91,5 +91,7 @@ class FlatironScheduler
 
     clean_schedule("master")
     new_schedule_commit
+
+    system("git remote remove origin")
   end
 end
