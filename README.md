@@ -11,3 +11,6 @@ The first time you run your gem, it will prompt you for the path of the schedule
 ## New Schedule
 
 To set up a new schedule, run `flatiron_scheduler new SCHEDULE_NAME CLONE_URL`. For example, `flatiron_scheduler new test_schedule git@github.com:learn-co-curriculum/web-0415.git`.
+
+## Template
+Run `flatiron_scheduler template FILE_NAME` to generate a blank day file.
