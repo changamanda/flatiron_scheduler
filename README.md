@@ -1,6 +1,10 @@
 #Flatiron Scheduler
 
-##Deploying the Day's Schedule
+## Installation
+
+Run `gem install flatiron_scheduler` to install.
+
+## Deploying the Day's Schedule
 
 The gem deploys the schedule from the `future` branch. To deploy, run `flatiron_scheduler WEEK_NUMBER DAY_NUMBER`. For example, `flatiron_scheduler 5 4` will update the schedule with `week-5/day-4.md` from the `future` branch.
 
