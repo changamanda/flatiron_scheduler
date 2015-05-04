@@ -20,7 +20,7 @@ class FlatironScheduler
 
   def add_commit
     system('git add .')
-    system("git commit -am \"Week #{self.week}, Day #{self.day}\"")
+    self.day <= 5 ? system("git commit -am \"Week #{self.week}, Day #{self.day}\"") : system("git commit -am \"Day #{self.day}\"")
   end
 
   def checkout_today

@@ -30,7 +30,7 @@ elsif ARGV[0].to_i != 0 && ARGV[1].to_i != 0
   end
   FlatironScheduler.new(ARGV[0], ARGV[1]).run
 elsif ARGV[0] == 'template'
-  Templater.new_file(ARGV[1])
+  new_file(ARGV[1])
 else
   documentation
 end

@@ -1,6 +1,7 @@
 module Templater
   def new_file(file_name)
-    FileUtils.mkdir_p(file_name.split('/')[0..-2].join('/'))
+    dir_path = file_name.split('/')[0..-2].join('/')
+    FileUtils.mkdir_p(dir_path) if dir_path != ""
     File.open(file_name, "w+"){ |f| f.write(blank_template) }
   end
 
