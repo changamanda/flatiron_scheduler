@@ -57,6 +57,18 @@ class FlatironScheduler
 
   ## CLASS METHODS
 
+  def self.rollback
+    self.move_to_dir(read_path)
+    self.checkout("master")
+
+    log = `git log`
+    split_log = log.split("\n")
+    commit_id = split_log[1].split("\e[")[1].split("m")[1]
+
+    system("git reset --hard #{commit_id}")
+    system("git push -f")
+  end
+
   def self.move_to_dir(dir)
     Dir.chdir(dir)
   end
@@ -74,7 +86,7 @@ class FlatironScheduler
       system("rm -rf interviews")
     elsif branch == 'master'
       dir = Dir.new(Dir.pwd)
-      dir.each { |file_name| system("rm -rf #{file_name}") if file_name.start_with?("week") }   
+      dir.each { |file_name| system("rm -rf #{file_name}") if file_name.start_with?("week") }
     end
   end
 
