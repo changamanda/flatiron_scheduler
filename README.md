@@ -13,5 +13,9 @@ _To install the gem and set up your first schedule, follow the instructions belo
 
 The gem deploys the schedule from the `future` branch. To deploy, run `flatiron_scheduler WEEK_NUMBER DAY_NUMBER`. For example, `flatiron_scheduler 5 4` will update the schedule with `week-5/day-4.md` from the `future` branch.
 
+## Rollback
+
+`flatiron_scheduler rollback` rolls back your latest commit. __Uses `git reset --hard`__.
+
 ## Template
 Run `flatiron_scheduler template FILE_NAME` to generate a blank day file.
